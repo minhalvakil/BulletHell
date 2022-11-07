@@ -7,7 +7,8 @@ public class ShipController : Entity
 {
     // Start is called before the first frame update
     [SerializeField] float speed = 5f;
-    [SerializeField] float braking = 0f;
+    [SerializeField] float decceleration = 0f;
+    [SerializeField] float acceleration = 0f;
     [SerializeField] GameObject bullet;
     [SerializeField] Text healthText;
     float h, v;
@@ -26,11 +27,7 @@ public class ShipController : Entity
         v = Input.GetAxisRaw("Vertical");
         if(Input.GetMouseButtonDown(0))
         {
-            Vector3 direction = this.transform.position - Camera.main.ScreenToWorldPoint (Input.mousePosition);
-            direction.z = 0;
-            GameObject b = Instantiate(bullet, this.transform.position + direction.normalized *-1, this.transform.rotation);
-            b.GetComponent<Rigidbody2D>().velocity = direction.normalized * -1 * b.GetComponent<Bullet>().speed;
-            b.GetComponent<Bullet>().owner = this.gameObject;
+            Shoot();
         }
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
@@ -38,10 +35,31 @@ public class ShipController : Entity
         healthText.text = string.Format("Health: {0}", health);
 
     }
+    private void Shoot()
+    {
+        Vector3 direction = this.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        direction.z = 0;
+        GameObject b = Instantiate(bullet, this.transform.position + direction.normalized * -1, this.transform.rotation);
+        b.GetComponent<Rigidbody2D>().velocity = direction.normalized * -1 * b.GetComponent<Bullet>().speed;
+        b.GetComponent<Bullet>().owner = this.gameObject;
+    }
+    private void Move()
+    {
+        Vector2 desiredSpeed = new Vector2(h * speed, v * speed);
+        float accelRateX = (Mathf.Abs(desiredSpeed.x) > 0.01f) ? acceleration : decceleration;
+        float accelRateY = (Mathf.Abs(desiredSpeed.y) > 0.01f) ? acceleration : decceleration;
+        float speedDifX = desiredSpeed.x - body.velocity.x;
+        float speedDifY = desiredSpeed.y - body.velocity.y;
+        float movementX = speedDifX * accelRateX;
+        float movementY = speedDifY * accelRateY;
+        body.AddForce(new Vector2 (movementX, movementY), ForceMode2D.Force);
+
+    }
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(h * speed, v * speed);
+        Move();
+        //body.velocity =  new Vector2(h * speed, v * speed);
     }
 
 }
