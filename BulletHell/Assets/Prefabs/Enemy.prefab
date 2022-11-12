@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3313006566749867881}
   - component: {fileID: 3313006566749867882}
   - component: {fileID: 3313006566749867887}
+  - component: {fileID: 8852133771584953755}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -100,9 +101,10 @@ MonoBehaviour:
   bullet: {fileID: 956088717592567081, guid: 3a30c0c21c3d0459cb75d9acf02d2877, type: 3}
   moveSpeed: 2
   cooldown: 3
+  wanderTime: 0
   seekRange: 5
-  retreatRange: 2
   behavior: 0
+  enemyType: 0
 --- !u!61 &3313006566749867887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,3 +131,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &8852133771584953755
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313006566749867883}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
