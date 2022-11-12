@@ -18,7 +18,8 @@ public abstract class Entity : MonoBehaviour
     public void damage(float d)
     {
         this.health -= d;
-        if(this.health<=0)
+        FindObjectOfType<AudioManager>().Play("Hurt");
+        if (this.health<=0)
         {
             Destroy(this.gameObject);
         }

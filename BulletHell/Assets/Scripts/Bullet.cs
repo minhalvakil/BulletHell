@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         body = this.GetComponent<Rigidbody2D>();
+        FindObjectOfType<AudioManager>().Play("Shoot");
     }
 
     // Update is called once per frame
