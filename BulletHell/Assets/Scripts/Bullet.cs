@@ -9,7 +9,9 @@ public class Bullet : MonoBehaviour
     float damage;
     [SerializeField]
     public float speed;
-    public GameObject owner;
+    public string ownerTag;
+    Animator animator;
+    bool active;
 
     
     // Start is called before the first frame update
@@ -17,6 +19,8 @@ public class Bullet : MonoBehaviour
     {
         body = this.GetComponent<Rigidbody2D>();
         FindObjectOfType<AudioManager>().Play("Shoot");
+        animator = this.GetComponent<Animator>();
+        active = true;
     }
 
     // Update is called once per frame
@@ -28,13 +32,19 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("End"))
+        {
+            Destroy(this.gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != this.owner.tag)
+        if(active && collision.gameObject.tag != ownerTag)
         {
             collision.gameObject.GetComponent<Entity>().damage(this.damage);
-            Destroy(this.gameObject);
+            active = false;
+            body.velocity *= 0.1f;
+            animator.SetBool("HasHit", true);
         }
     }
 }

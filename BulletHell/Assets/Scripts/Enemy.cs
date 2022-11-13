@@ -57,6 +57,8 @@ public class Enemy : Entity
                 wanderTimer += Time.deltaTime;
                 break;
         }
+        float angle = (Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg) +90f;
+        this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         CheckState();
     }
     void CheckState()
@@ -85,7 +87,7 @@ public class Enemy : Entity
         float angle = (Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg)+180f;
         GameObject b = Instantiate(bullet, this.transform.position + dist.normalized, Quaternion.AngleAxis(angle, Vector3.forward));
        b.GetComponent<Rigidbody2D>().velocity = dist.normalized * b.GetComponent<Bullet>().speed;
-       b.GetComponent<Bullet>().owner = this.gameObject;
+       b.GetComponent<Bullet>().ownerTag = this.gameObject.tag;
     }
     void ClampToScreen()
     {

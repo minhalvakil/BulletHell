@@ -46,7 +46,7 @@ public class ShipController : Entity
         direction.z = 0;
         GameObject b = Instantiate(bullet, this.transform.position + direction.normalized * -1, this.transform.rotation);
         b.GetComponent<Rigidbody2D>().velocity = direction.normalized * -1 * b.GetComponent<Bullet>().speed;
-        b.GetComponent<Bullet>().owner = this.gameObject;
+        b.GetComponent<Bullet>().ownerTag = this.gameObject.tag;
     }
     private void Move()
     {
