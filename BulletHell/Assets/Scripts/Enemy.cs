@@ -57,6 +57,8 @@ public class Enemy : Entity
                 wanderTimer += Time.deltaTime;
                 break;
         }
+        float angle = (Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg) +90f;
+        this.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         CheckState();
     }
     void CheckState()
@@ -85,13 +87,22 @@ public class Enemy : Entity
         float angle = (Mathf.Atan2(dist.y, dist.x) * Mathf.Rad2Deg)+180f;
         GameObject b = Instantiate(bullet, this.transform.position + dist.normalized, Quaternion.AngleAxis(angle, Vector3.forward));
        b.GetComponent<Rigidbody2D>().velocity = dist.normalized * b.GetComponent<Bullet>().speed;
-       b.GetComponent<Bullet>().owner = this.gameObject;
+       b.GetComponent<Bullet>().ownerTag = this.gameObject.tag;
     }
     void ClampToScreen()
     {
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minScreenBounds.x + 0.5f, maxScreenBounds.x - 0.5f), Mathf.Clamp(transform.position.y, minScreenBounds.y + 0.5f, maxScreenBounds.y - 0.5f), transform.position.z);
+    }
+
+    public override void DestroyThis()
+    {
+        Destroy(this.gameObject);
+    }
+    public override void OnDamage()
+    {
+
     }
     public enum behaviorState
     {

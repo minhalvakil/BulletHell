@@ -19,10 +19,13 @@ public abstract class Entity : MonoBehaviour
     {
         this.health -= d;
         FindObjectOfType<AudioManager>().Play("Hurt");
+        OnDamage();
         if (this.health<=0)
         {
-            Destroy(this.gameObject);
+            this.DestroyThis();
         }
         
     }
+    public abstract void DestroyThis();
+    public abstract void OnDamage();
 }
