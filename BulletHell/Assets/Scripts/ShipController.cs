@@ -14,10 +14,12 @@ public class ShipController : Entity
     [SerializeField] Text healthText;
     float h, v;
     Rigidbody2D body;
+    Animator anim;
     void Start()
     {
         body = this.GetComponent<Rigidbody2D>();
         healthText.text = string.Format("Health: {0}", health);
+        anim = this.GetComponent<Animator>();
 
     }
 
@@ -26,6 +28,7 @@ public class ShipController : Entity
     {
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
+        anim.SetInteger("Direction", determineDirection());
         if(Input.GetMouseButtonDown(0))
         {
             Shoot();
@@ -33,11 +36,8 @@ public class ShipController : Entity
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minScreenBounds.x + 0.5f, maxScreenBounds.x - 0.5f), Mathf.Clamp(transform.position.y, minScreenBounds.y + 0.5f, maxScreenBounds.y - 0.5f), transform.position.z);
-        healthText.text = string.Format("Health: {0}", health);
-        if(health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        
+        
 
     }
     private void Shoot()
@@ -60,11 +60,47 @@ public class ShipController : Entity
         body.AddForce(new Vector2 (movementX, movementY), ForceMode2D.Force);
 
     }
+    private int determineDirection()
+    {
+        if(h < 0 && Mathf.Abs(h)>Mathf.Abs(v))
+        {
+            return 3;
+        }
+        else if (h > 0 && Mathf.Abs(h) > Mathf.Abs(v))
+        {
+            return 4;
+        }
+        else if (v > 0 && Mathf.Abs(v) > Mathf.Abs(h))
+        {
+            return 2;
+        }
+        else if (v < 0 && Mathf.Abs(v) > Mathf.Abs(h))
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
     private void FixedUpdate()
     {
         Move();
         //body.velocity =  new Vector2(h * speed, v * speed);
+    }
+    public override void OnDamage()
+    {
+        healthText.text = string.Format("Health: {0}", health);
+    }
+    public override void DestroyThis()
+    {
+        foreach (Enemy e in FindObjectsOfType<Enemy>())
+        {
+           Destroy(e.gameObject);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Destroy(this.gameObject);
     }
 
 }
