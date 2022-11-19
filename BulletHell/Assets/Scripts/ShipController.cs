@@ -15,11 +15,15 @@ public class ShipController : Entity
     float h, v;
     Rigidbody2D body;
     Animator anim;
+    [SerializeField]
+    float shootCooldown;
+    float timer;
     void Start()
     {
         body = this.GetComponent<Rigidbody2D>();
         healthText.text = string.Format("Health: {0}", health);
         anim = this.GetComponent<Animator>();
+        timer = 0;
 
     }
 
@@ -29,9 +33,14 @@ public class ShipController : Entity
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         anim.SetInteger("Direction", determineDirection());
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timer > shootCooldown)
         {
+            timer = 0;
             Shoot();
+        }
+        else
+        {
+            timer += Time.deltaTime;
         }
         Vector3 minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         Vector3 maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
