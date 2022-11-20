@@ -20,6 +20,7 @@ public class ShipController : Entity
     float timer;
     void Start()
     {
+        maxHealth = health;
         body = this.GetComponent<Rigidbody2D>();
         healthText.text = string.Format("Health: {0}", health);
         anim = this.GetComponent<Animator>();
@@ -110,6 +111,12 @@ public class ShipController : Entity
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Destroy(this.gameObject);
+    }
+
+    public void RestoreToMaxHealth()
+    {
+        health = maxHealth;
+        healthText.text = string.Format("Health: {0}", health);
     }
 
 }

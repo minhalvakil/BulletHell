@@ -47,6 +47,7 @@ public class WaveManager : MonoBehaviour
         }
         else if(timer > timeBetweenWaves)
         {
+            FindObjectOfType<ShipController>().RestoreToMaxHealth();
             timer = 0;
             waveNumber++;
             isInWave = true;
@@ -57,7 +58,6 @@ public class WaveManager : MonoBehaviour
                 currentWave = waves[waveNumber];
             }
         }
-        print(isInWave);
     }
     private void CheckIsWaveOver()
     {
