@@ -7,11 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void BackToMenu()
     {
+        FindObjectOfType<AudioManager>().Play("Click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 
