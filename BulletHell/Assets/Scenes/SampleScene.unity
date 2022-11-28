@@ -903,7 +903,7 @@ MonoBehaviour:
   enemyPercentages:
   - 5
   - 45
-  - 40
+  - 50
   spawnLocations:
   - {fileID: 1088310491}
   - {fileID: 1129364535}
@@ -949,11 +949,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 1792562954}
+  - {fileID: 1620739079}
   - {fileID: 667971251}
   - {fileID: 1340936390}
   - {fileID: 1926719323}
   - {fileID: 370599161}
+  - {fileID: 1181589211}
   timeBetweenWaves: 5
   waveText: {fileID: 586508362}
   timerText: {fileID: 1102848525}

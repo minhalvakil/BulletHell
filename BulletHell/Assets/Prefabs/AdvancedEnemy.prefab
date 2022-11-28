@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57424ff6ae3074a76ad6016f77970721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 30
   bullet: {fileID: 8934116489883755285, guid: 242480a8a5b122e4dbd107871881261f, type: 3}
   moveSpeed: 2
   cooldown: 2
