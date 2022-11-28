@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 667971252}
   - component: {fileID: 667971251}
   m_Layer: 0
-  m_Name: Wave (1)
+  m_Name: Wave (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,6 +752,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   waveText: {fileID: 586508362}
   timerText: {fileID: 1102848525}
+  boss: {fileID: 0}
 --- !u!4 &1219793136
 Transform:
   m_ObjectHideFlags: 0
@@ -777,7 +778,7 @@ GameObject:
   - component: {fileID: 1340936389}
   - component: {fileID: 1340936390}
   m_Layer: 0
-  m_Name: Wave (2)
+  m_Name: Wave (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -871,7 +872,7 @@ GameObject:
   - component: {fileID: 1620739080}
   - component: {fileID: 1620739079}
   m_Layer: 0
-  m_Name: Wave
+  m_Name: Wave (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,7 +1355,7 @@ GameObject:
   - component: {fileID: 1926719322}
   - component: {fileID: 1926719323}
   m_Layer: 0
-  m_Name: Wave (3)
+  m_Name: Wave (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
