@@ -33,7 +33,8 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (isInWave && FindObjectsOfType<Enemy>().Length < currentWave.maxNumberOfEnemies && spawnTimer > currentWave.timeBetweenSpawns && currentWave.numberOfEnemies > 0 && !currentWave.hasBoss)
+        //remove enemies from boss wave  && !currentWave.hasBoss
+        if (isInWave && FindObjectsOfType<Enemy>().Length < currentWave.maxNumberOfEnemies && spawnTimer > currentWave.timeBetweenSpawns && currentWave.numberOfEnemies > 0)
         {
             //spawn enemy
             SpawnEnemy();
