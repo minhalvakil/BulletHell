@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 8314911126749238992, guid: 463b930045899ae47beee2e759bdba8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  timeBetweenAttacks: 5
+  timeBetweenAttacks: 3
   shootCooldown: 1.5
   bullet: {fileID: 7321135509822199363, guid: 3332c10f48108e14983ce07b2424c14d, type: 3}
   meleeDamage: 15
-  speed: 10
+  speed: 15
 --- !u!95 &7325020808710470887
 Animator:
   serializedVersion: 3
