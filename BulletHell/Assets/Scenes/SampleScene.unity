@@ -1484,8 +1484,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8daf621a6e1b4e8f8e8c6a4812cd4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyList: []
-  enemyPercentages: []
+  enemyList:
+  - {fileID: 485698699259109650, guid: f6fe7bbbbd20cab49a3d0734eed70917, type: 3}
+  enemyPercentages:
+  - 100
   spawnLocations:
   - {fileID: 548054167}
   - {fileID: 1129364535}
@@ -1495,8 +1497,8 @@ MonoBehaviour:
   - {fileID: 548054167}
   - {fileID: 1636920610}
   - {fileID: 732653695}
-  time: 60
-  maxNumberOfEnemies: 9
+  time: 999
+  maxNumberOfEnemies: 4
   numberOfEnemies: 20
   timeBetweenSpawns: 1
   hasBoss: 1

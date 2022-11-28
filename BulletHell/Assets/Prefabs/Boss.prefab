@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed699846e9d83cb48956cfef62152477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 750
   bullet: {fileID: 8934116489883755285, guid: 242480a8a5b122e4dbd107871881261f, type: 3}
-  cooldownBetweenShots: 0.75
+  cooldownBetweenShots: 0.5
   leftHand: {fileID: 5581317034325222427, guid: 9ba0886b368ae844690b2739dac9067f, type: 3}
   rightHand: {fileID: 2103319254467709133, guid: 8ece999144b9a2e42bbdb2ae75e1de79, type: 3}
 --- !u!61 &5988611320902717699
