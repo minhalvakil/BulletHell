@@ -14,6 +14,8 @@ public class WaveManager : MonoBehaviour
     private bool isInWave;
     [SerializeField]
     Text waveText, timerText;
+    [SerializeField]
+    GameObject boss;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +33,17 @@ public class WaveManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (isInWave && FindObjectsOfType<Enemy>().Length < currentWave.maxNumberOfEnemies && spawnTimer > currentWave.timeBetweenSpawns && currentWave.numberOfEnemies > 0)
+        if (isInWave && FindObjectsOfType<Enemy>().Length < currentWave.maxNumberOfEnemies && spawnTimer > currentWave.timeBetweenSpawns && currentWave.numberOfEnemies > 0 && !currentWave.hasBoss)
         {
             //spawn enemy
             SpawnEnemy();
             spawnTimer = 0;
             currentWave.numberOfEnemies--;
+        }
+        if(isInWave && currentWave.hasBoss && FindObjectsOfType<Boss>().Length == 0)
+        {
+            GameObject spawnPoint = currentWave.spawnLocations[0];
+            Instantiate(boss, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
         //check end wave
         if(isInWave)
