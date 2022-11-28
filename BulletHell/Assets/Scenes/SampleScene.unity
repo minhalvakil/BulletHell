@@ -356,7 +356,7 @@ Transform:
   - {fileID: 1841510385}
   - {fileID: 1792562953}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586508359
 GameObject:
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 1841510386}
+  - {fileID: 1620739079}
   - {fileID: 667971251}
   - {fileID: 1340936390}
   - {fileID: 1926719323}
@@ -962,7 +962,7 @@ MonoBehaviour:
   - {fileID: 1983565678}
   - {fileID: 1841510386}
   - {fileID: 1792562954}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 3
   waveText: {fileID: 586508362}
   timerText: {fileID: 1102848525}
   boss: {fileID: 5988611320902717758, guid: 7b8265f46ab2d8b48b200892b46d840d, type: 3}
@@ -974,11 +974,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219793134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4390676, y: 0.10574043, z: -0.0013729669}
+  m_LocalPosition: {x: -4.0662932, y: 2.0983257, z: 0.005310774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1895792722}
-  m_RootOrder: 8
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340936388
 GameObject:
@@ -1317,7 +1317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1759657582
 GameObject:
@@ -1708,7 +1708,7 @@ MonoBehaviour:
   - {fileID: 1636920610}
   - {fileID: 732653695}
   time: 300
-  maxNumberOfEnemies: 14
+  maxNumberOfEnemies: 8
   numberOfEnemies: 33
   timeBetweenSpawns: 0.8
   hasBoss: 0
@@ -1748,7 +1748,6 @@ Transform:
   - {fileID: 548054168}
   - {fileID: 1636920611}
   - {fileID: 732653696}
-  - {fileID: 1219793136}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
