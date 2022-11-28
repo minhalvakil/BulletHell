@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 580953984}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &130239523
 MonoBehaviour:
@@ -161,6 +161,72 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130239521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8daf621a6e1b4e8f8e8c6a4812cd4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 485698699259109650, guid: f6fe7bbbbd20cab49a3d0734eed70917, type: 3}
+  - {fileID: 3587699816616828621, guid: 6f9e7122f9e01f14da4bf8d8295319cd, type: 3}
+  - {fileID: 2841259482568736686, guid: 7126bbf7b7a5c494ebf73e2f17135157, type: 3}
+  enemyPercentages:
+  - 20
+  - 20
+  - 60
+  spawnLocations:
+  - {fileID: 1088310491}
+  - {fileID: 1129364535}
+  - {fileID: 1512126392}
+  - {fileID: 578141182}
+  - {fileID: 890914646}
+  - {fileID: 548054167}
+  - {fileID: 1636920610}
+  - {fileID: 732653695}
+  time: 60
+  maxNumberOfEnemies: 9
+  numberOfEnemies: 20
+  timeBetweenSpawns: 1
+  hasBoss: 0
+  boss: {fileID: 0}
+--- !u!1 &370599159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370599160}
+  - component: {fileID: 370599161}
+  m_Layer: 0
+  m_Name: Wave (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &370599160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370599159}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8996644, y: 2.0871904, z: 0.39800748}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 580953984}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370599161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370599159}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8daf621a6e1b4e8f8e8c6a4812cd4c4, type: 3}
@@ -276,11 +342,13 @@ Transform:
   m_LocalPosition: {x: 1.8333712, y: 0.011135366, z: -0.3926967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 130239522}
   - {fileID: 1620739080}
   - {fileID: 667971252}
   - {fileID: 1340936389}
   - {fileID: 1926719322}
-  - {fileID: 130239522}
+  - {fileID: 370599160}
+  - {fileID: 1792562953}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -425,7 +493,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 580953984}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732653695
 GameObject:
@@ -812,14 +880,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 1620739079}
+  - {fileID: 370599161}
   - {fileID: 667971251}
   - {fileID: 1340936390}
   - {fileID: 1926719323}
   timeBetweenWaves: 5
   waveText: {fileID: 586508362}
   timerText: {fileID: 1102848525}
-  boss: {fileID: 0}
+  boss: {fileID: 5988611320902717758, guid: 7b8265f46ab2d8b48b200892b46d840d, type: 3}
 --- !u!4 &1219793136
 Transform:
   m_ObjectHideFlags: 0
@@ -863,7 +931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 580953984}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1340936390
 MonoBehaviour:
@@ -990,7 +1058,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 580953984}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636920610
 GameObject:
@@ -1373,6 +1441,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1792562952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1792562953}
+  - component: {fileID: 1792562954}
+  m_Layer: 0
+  m_Name: BossWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1792562953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792562952}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8996644, y: 2.0871904, z: 0.39800748}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 580953984}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1792562954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792562952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8daf621a6e1b4e8f8e8c6a4812cd4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  enemyPercentages: []
+  spawnLocations:
+  - {fileID: 1088310491}
+  - {fileID: 1129364535}
+  - {fileID: 1512126392}
+  - {fileID: 578141182}
+  - {fileID: 890914646}
+  - {fileID: 548054167}
+  - {fileID: 1636920610}
+  - {fileID: 732653695}
+  time: 60
+  maxNumberOfEnemies: 9
+  numberOfEnemies: 20
+  timeBetweenSpawns: 1
+  hasBoss: 1
+  boss: {fileID: 5988611320902717758, guid: 7b8265f46ab2d8b48b200892b46d840d, type: 3}
 --- !u!1 &1895792721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,7 +1568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 580953984}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1926719323
 MonoBehaviour:
