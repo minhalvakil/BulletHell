@@ -236,10 +236,12 @@ MonoBehaviour:
   - {fileID: 485698699259109650, guid: f6fe7bbbbd20cab49a3d0734eed70917, type: 3}
   - {fileID: 3587699816616828621, guid: 6f9e7122f9e01f14da4bf8d8295319cd, type: 3}
   - {fileID: 2841259482568736686, guid: 7126bbf7b7a5c494ebf73e2f17135157, type: 3}
+  - {fileID: 387752307327533014, guid: 0aea5bba885bf5f4db6d2e7ec0bb6faa, type: 3}
   enemyPercentages:
-  - 20
-  - 20
-  - 60
+  - 5
+  - 15
+  - 40
+  - 40
   spawnLocations:
   - {fileID: 1088310491}
   - {fileID: 1129364535}
@@ -249,10 +251,10 @@ MonoBehaviour:
   - {fileID: 548054167}
   - {fileID: 1636920610}
   - {fileID: 732653695}
-  time: 60
-  maxNumberOfEnemies: 9
-  numberOfEnemies: 20
-  timeBetweenSpawns: 1
+  time: 300
+  maxNumberOfEnemies: 19
+  numberOfEnemies: 24
+  timeBetweenSpawns: 0.8
   hasBoss: 0
   boss: {fileID: 0}
 --- !u!1 &548054167
@@ -348,6 +350,7 @@ Transform:
   - {fileID: 1340936389}
   - {fileID: 1926719322}
   - {fileID: 370599160}
+  - {fileID: 1181589210}
   - {fileID: 1792562953}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -850,6 +853,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1181589209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181589210}
+  - component: {fileID: 1181589211}
+  m_Layer: 0
+  m_Name: Wave (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1181589210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181589209}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8996644, y: 2.0871904, z: 0.39800748}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 580953984}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1181589211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181589209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8daf621a6e1b4e8f8e8c6a4812cd4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 3587699816616828621, guid: 6f9e7122f9e01f14da4bf8d8295319cd, type: 3}
+  - {fileID: 2841259482568736686, guid: 7126bbf7b7a5c494ebf73e2f17135157, type: 3}
+  - {fileID: 387752307327533014, guid: 0aea5bba885bf5f4db6d2e7ec0bb6faa, type: 3}
+  enemyPercentages:
+  - 5
+  - 45
+  - 40
+  spawnLocations:
+  - {fileID: 1088310491}
+  - {fileID: 1129364535}
+  - {fileID: 1512126392}
+  - {fileID: 578141182}
+  - {fileID: 890914646}
+  - {fileID: 548054167}
+  - {fileID: 1636920610}
+  - {fileID: 732653695}
+  time: 300
+  maxNumberOfEnemies: 12
+  numberOfEnemies: 26
+  timeBetweenSpawns: 1
+  hasBoss: 0
+  boss: {fileID: 0}
 --- !u!1 &1219793134
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +953,7 @@ MonoBehaviour:
   - {fileID: 667971251}
   - {fileID: 1340936390}
   - {fileID: 1926719323}
+  - {fileID: 370599161}
   timeBetweenWaves: 5
   waveText: {fileID: 586508362}
   timerText: {fileID: 1102848525}
@@ -948,9 +1018,11 @@ MonoBehaviour:
   enemyList:
   - {fileID: 485698699259109650, guid: f6fe7bbbbd20cab49a3d0734eed70917, type: 3}
   - {fileID: 3587699816616828621, guid: 6f9e7122f9e01f14da4bf8d8295319cd, type: 3}
+  - {fileID: 2841259482568736686, guid: 7126bbf7b7a5c494ebf73e2f17135157, type: 3}
   enemyPercentages:
   - 20
-  - 70
+  - 65
+  - 5
   spawnLocations:
   - {fileID: 1088310491}
   - {fileID: 1129364535}
@@ -1470,7 +1542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 580953984}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1792562954
 MonoBehaviour:
@@ -1586,10 +1658,12 @@ MonoBehaviour:
   - {fileID: 485698699259109650, guid: f6fe7bbbbd20cab49a3d0734eed70917, type: 3}
   - {fileID: 3587699816616828621, guid: 6f9e7122f9e01f14da4bf8d8295319cd, type: 3}
   - {fileID: 2841259482568736686, guid: 7126bbf7b7a5c494ebf73e2f17135157, type: 3}
+  - {fileID: 387752307327533014, guid: 0aea5bba885bf5f4db6d2e7ec0bb6faa, type: 3}
   enemyPercentages:
-  - 20
-  - 20
-  - 60
+  - 10
+  - 35
+  - 50
+  - 5
   spawnLocations:
   - {fileID: 1088310491}
   - {fileID: 1129364535}
@@ -1602,7 +1676,7 @@ MonoBehaviour:
   time: 60
   maxNumberOfEnemies: 9
   numberOfEnemies: 20
-  timeBetweenSpawns: 1
+  timeBetweenSpawns: 0.9
   hasBoss: 0
   boss: {fileID: 0}
 --- !u!1 &1996438869

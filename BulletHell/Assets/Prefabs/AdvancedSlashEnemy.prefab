@@ -101,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   bullet: {fileID: 7321135509822199363, guid: 3332c10f48108e14983ce07b2424c14d, type: 3}
-  moveSpeed: 0.5
-  cooldown: 3
+  moveSpeed: 1.5
+  cooldown: 2.5
   wanderTime: 0
   seekRange: 7
   behavior: 0
@@ -188,7 +188,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387752307327533014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b7b6ad3f5cb2c8043994b9b646207fe9, type: 2}
   m_CullingMode: 0
