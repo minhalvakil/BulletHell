@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 370599161}
+  - {fileID: 1792562954}
   - {fileID: 667971251}
   - {fileID: 1340936390}
   - {fileID: 1926719323}
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   enemyList: []
   enemyPercentages: []
   spawnLocations:
-  - {fileID: 1088310491}
+  - {fileID: 548054167}
   - {fileID: 1129364535}
   - {fileID: 1512126392}
   - {fileID: 578141182}
